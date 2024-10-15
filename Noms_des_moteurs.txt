@@ -1,0 +1,7 @@
+NOMS DES MOTEURS 
+M1 : Treuil motorisé : 12v 2A (500mm) --> PHOQUE
+M2 : Treuil Motorisé : 12v 2A (2200mm) --> tire la Grand voile
+M3 : Vérin : 12v 2A --> pousse le mat de grande vergue
+M4 : Vérin long : 12v 2A (600 à 700 mm) --> pousse le mat sortant
+MB : 2 moteurs brushless télécommandés originellement. 
+M7 + M6 : vérins de la croix

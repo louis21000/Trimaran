@@ -1,0 +1,8 @@
+On a : P_éolienne = 1/2 * ρ_air * S(surface du disque éolien) * v^3(vitesse du vent en m/s)
+Ainsi : P_éolienne = 1/2 * 1 * 9/400 * TT * 0.4 * V1^3
+ 
+50W = 0.0141375 * V1^3
+V1^3 = 50/0.0141375
+V1^3 = 3536
+V1 = 15.23 m/s = 45.69km/h
+Ainsi la valeur max de la Vitesse pour P_éolienne_max = 50W est égal à 45,69km/h

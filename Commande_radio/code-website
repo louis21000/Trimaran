@@ -1,39 +1,28 @@
 https://fr.vittascience.com/learn/tutorial.php?id=19/effectuer-une-transmission-radio-avec-un-nrf24l01-sur-arduino
-#include <SPI.h>                                                       // appel des bibliothèques
+#include <SPI.h>                                                          // appel des bibliothèques
 #include <nRF24L01.h>
 #include <RF24.h>
 
 #define CE_PIN   9
 #define CSN_PIN 10
 
-const uint64_t adresse = 0xE8E8F0F0E1LL;        // adresse du canal de communication
+const uint64_t adresse = 0xE8E8F0F0E1LL;           // adresse du canal de communication
+int data[5];                             
 
-RF24 radio(CE_PIN, CSN_PIN);                               // création de l'objet radio
+RF24 radio(CE_PIN, CSN_PIN);                                   // création de l'objet radio
 
-int data[5];
-
-void setup()   
-{
-  Serial.begin(9600);                                               // initialisation du moniteur série
-  radio.begin();                                                         // initialisation du module NRF24L01
-  radio.openReadingPipe(1,adresse);                   // configuration du canal de communication du module NRF24L01     
-  radio.startListening();                                          // configuration du module NRF24L01 en récepteur
+void setup()
+{                  
+  radio.begin();                                                              // initialisation du module NRF24L01
+  radio.openWritingPipe(adresse);                             // configuration du canal de communication du module NRF24L01
 }
 
-
-void loop() {
-  if ( radio.available() )                                           // si des données sont présentes
-  {
-    radio.read( data, sizeof(data) );                        // lecture des données
-    Serial.print("data[0]=");                                     // affichage dans le moniteur série
-    Serial.println(data[0]);
-    Serial.print("data[1]=");
-    Serial.println(data[1]);
-    Serial.print("data[2]=");
-    Serial.println(data[2]);
-    Serial.print("data[3]=");
-    Serial.println(data[3]);
-    Serial.print("data[4]=");
-    Serial.println(data[4]);
-  }
+void loop()   
+{
+  data[0] = 0;
+  data[1] = 1;
+  data[2] = 2;
+  data[3] = 3;
+  data[4] = 4;
+  radio.write( data, sizeof(data) );                               // envoi des données
 }

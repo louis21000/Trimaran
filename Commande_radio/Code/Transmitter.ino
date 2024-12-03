@@ -1,4 +1,4 @@
-//Arduino MEGA
+//Arduino Uno R3
 #include <SPI.h>
 #include <RF24.h>
 

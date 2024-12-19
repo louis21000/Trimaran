@@ -1,7 +1,7 @@
-//modification 1
-#define IN1 9
-#define IN2 10
-#define EN1 8
+//modification 1 blanc sur jaune
+#define IN1 3
+#define IN2 4
+#define EN1 2
 
 void setup() {
   Serial.begin(9600);
@@ -16,10 +16,10 @@ void loop() {
   digitalWrite(IN1, HIGH);
   digitalWrite(IN2, LOW);
   analogWrite(EN1, 255);
-  Serial.println("Moteur en marche");
-  delay(2000);
-  Serial.println("Arret moteur");
-  analogWrite(EN1, 0);
+  delay(3500);
   delay(1000);
-
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  analogWrite(EN1, 255);
+  delay(3500);
 }
